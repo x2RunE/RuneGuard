@@ -158,7 +158,7 @@ if lp.PlayerGui.Display.Verson.Text then
 	local Hitbox = Tabs.Tab:CreateButton({
 		Name = "Big Hitbox",
 		Callback = function()
-			local npc = workspace:FindFirstChild("NPCName");
+			local npc = workspace:FindFirstChild("Fishman Karate User");
 			if npc and npc:FindFirstChild("HumanoidRootPart") then
 				local rootPart = npc.HumanoidRootPart;
 				rootPart.Size = Vector3.new(30, 30, 30);
