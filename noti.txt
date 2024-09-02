@@ -1,2 +1,9 @@
 Eng : Ty for using Rune Hub Pro 💕
 Viet : Cảm ơn vì sử dụng Rune Hub Pro 💕
+
+- Update Log :
+[!] Fixed solara problem
+[^] Changed to new Gui
+[^] Improved Walkspeed
+[+] Added update log [ No need to update script ]
+HttpGet method
