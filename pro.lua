@@ -1,4 +1,4 @@
-local executor = getexecutorname()
+local executor = getexecutorname() or identifyexecutor()
 if executor:find('Seliware') then
   loadstring(game:HttpGet("https://raw.githubusercontent.com/x2RunE/RuneGuard/refs/heads/main/script.lua"))()
 else
