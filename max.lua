@@ -1,21 +1,23 @@
-local ServiceNames = {"ReplicatedStorage","TweenService", "Players", "Workspace","RunService","UserInputService"}
-local Services = {}
-for _, Service in ipairs(ServiceNames) do 
-    Services[Service] = cloneref(game:GetService(Service))
-end 
-local rs = Services.ReplicatedStorage
-local plrs = Services.Players
-local plr = plrs.LocalPlayer
-repeat
-    task.wait(1.25)
-until rs and plr
 pcall(function()
+    repeat wait() until game:IsLoaded()
     pcall(function()
-        local crabRemote = rs:FindFirstChild("Crab_Strangler")
-        if crabRemote then
-            crabRemote:Destroy()
-        end
+        pcall(function()
+            pcall(function()
+                if getconnections then
+                    for _, v in pairs(getgc(true)) do
+                        if type(v) == "function" then
+                            local info = debug.getinfo(v)
+                            local name = info.name:lower()
+                            if name == "detected" or name == 'crash' then
+                                hookfunction(v, function() end)
+                            end
+                         end
+                     end
+                     for i,v in next,getconnections(game:GetService('ScriptContext').Error) do v:Disconnect() end
+                end
+            end)
+        end)
+        task.wait(1.25)
     end)
-    task.wait(1.25)
 end)
 loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/3437e5df438f126562c22e3e31ad895b.lua"))()
